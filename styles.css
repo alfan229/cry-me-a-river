@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container with grid layout */
+#main-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr; /* Left and right columns */
+    height: 100vh;
+}
+
+/* Left grid styles */
+#left-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 50px;
+    background-color: #1d1b1b;
+    overflow-y: auto;
+}
+
+#upload-area {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#image-input {
+    display: none;
+}
+
+#upload-area label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Original blue color */
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#upload-area label:hover {
+    background-color: #0069d9; /* Slightly darker blue */
+}
+
+#upload-area label:active {
+    background-color: #005cbf; /* Even darker blue */
+}
+
+#drop-area {
+    margin-top: 20px;
+    padding: 40px;
+    border: 2px dashed #007BFF;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#paste-instructions {
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* Dashboard styles */
+#dashboard {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#dashboard label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#dashboard input[type="range"],
+#dashboard input[type="number"] {
+    width: 100%;
+}
+
+#shuffle-button,
+#copy-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28A745; /* Original green color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+}
+
+#shuffle-button:hover,
+#copy-button:hover {
+    background-color: #218838; /* Slightly darker green */
+}
+
+#shuffle-button:active,
+#copy-button:active {
+    background-color: #1e7e34; /* Even darker green */
+}
+
+/* Disable dashboard controls when no image is loaded */
+#dashboard.disabled {
+    opacity: 0.5;
+}
+
+#dashboard.disabled input,
+#dashboard.disabled button {
+    pointer-events: none;
+}
+
+/* Right grid styles */
+#right-grid {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    background-color: #393636;
+    overflow: auto;
+    padding: 20px;
+}
+
+#image-container {
+    position: relative;
+}
+
+#image-canvas {
+    max-width: 100%;
+    max-height: calc(100vh - 40px);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #main-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    #left-grid,
+    #right-grid {
+        height: auto;
+    }
+}

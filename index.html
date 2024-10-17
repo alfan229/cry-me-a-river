@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Square Overlay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="main-container">
+    <!-- Left Grid: Upload Area and Dashboard -->
+    <div id="left-grid">
+        <div id="upload-area">
+            <input type="file" id="image-input" accept="image/*">
+            <label for="image-input">Upload image</label>
+            <div id="drop-area">Drag and drop image here</div>
+            <div id="paste-instructions">Or paste an image from the clipboard (Ctrl+V)</div>
+        </div>
+
+        <div id="dashboard">
+            <label>
+                Number of Squares:
+                <input type="range" id="square-count" min="0" max="10" value="5">
+                <span id="square-count-value">5</span>
+            </label>
+            <label>
+                Min Square Height:
+                <input type="number" id="min-size" min="1" max="50" value="3">
+            </label>
+            <label>
+                Max Square Height:
+                <input type="number" id="max-size" min="1" max="50" value="15">
+            </label>
+            <button id="shuffle-button">Shuffle Squares</button>
+            <button id="copy-button">Copy Image to Clipboard</button>
+        </div>
+    </div>
+
+    <!-- Right Grid: Image Container -->
+    <div id="right-grid">
+        <div id="image-container">
+            <canvas id="image-canvas"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
